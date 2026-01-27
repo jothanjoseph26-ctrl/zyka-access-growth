@@ -17,7 +17,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-tight section-padding">
+      <div className="relative z-10 section-padding max-w-7xl">
         <div className="max-w-2xl">
           <div className="animate-fade-up opacity-0" style={{ animationFillMode: 'forwards' }}>
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
