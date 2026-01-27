@@ -3,6 +3,9 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { User, Building2, TrendingUp, ArrowRight, CheckCircle } from "lucide-react";
+import personalCreditImg from "@/assets/personal-credit.jpg";
+import businessCreditImg from "@/assets/business-credit.jpg";
+import growthFinancingImg from "@/assets/growth-financing.jpg";
 
 const solutions = [
   {
@@ -16,6 +19,7 @@ const solutions = [
       "Competitive rates",
       "No collateral required for select products",
     ],
+    image: personalCreditImg,
   },
   {
     icon: Building2,
@@ -28,6 +32,7 @@ const solutions = [
       "Inventory funding",
       "Expansion capital",
     ],
+    image: businessCreditImg,
   },
   {
     icon: TrendingUp,
@@ -40,6 +45,7 @@ const solutions = [
       "Structured disbursement",
       "Dedicated account management",
     ],
+    image: growthFinancingImg,
   },
 ];
 
@@ -68,7 +74,7 @@ const Solutions = () => {
         {/* Solutions */}
         <section className="section-padding bg-card">
           <div className="container-tight">
-            <div className="space-y-16">
+            <div className="space-y-24">
               {solutions.map((solution, index) => (
                 <div
                   key={solution.title}
@@ -105,10 +111,18 @@ const Solutions = () => {
                     </Button>
                   </div>
 
-                  {/* Visual */}
+                  {/* Image */}
                   <div className="flex-1">
-                    <div className="aspect-square max-w-md mx-auto rounded-2xl bg-gradient-card border border-border/50 p-8 flex items-center justify-center">
-                      <solution.icon className="w-32 h-32 text-primary/20" />
+                    <div className="relative max-w-md mx-auto">
+                      <div className="aspect-square rounded-2xl overflow-hidden border border-border/50 shadow-glow">
+                        <img
+                          src={solution.image}
+                          alt={solution.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      {/* Decorative accent */}
+                      <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl bg-gradient-primary opacity-20 -z-10" />
                     </div>
                   </div>
                 </div>
