@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { TrendingUp, Phone, Mail, MapPin, Instagram } from "lucide-react";
+import { TrendingUp, Phone, Instagram, Globe, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -17,7 +17,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Smart credit solutions designed for individuals and businesses who build. Access capital responsibly.
+              Efficient. Reliable. Easily Accessible. Smart credit solutions for individuals and businesses.
             </p>
           </div>
 
@@ -29,7 +29,7 @@ const Footer = () => {
                 About Us
               </Link>
               <Link to="/solutions" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                Credit Solutions
+                Our Services
               </Link>
               <Link to="/how-it-works" className="text-muted-foreground text-sm hover:text-primary transition-colors">
                 How It Works
@@ -40,18 +40,27 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Solutions */}
+          {/* Loan Products */}
           <div className="space-y-4">
-            <h4 className="text-foreground font-semibold">Solutions</h4>
+            <h4 className="text-foreground font-semibold">Loan Products</h4>
             <div className="flex flex-col gap-3">
               <Link to="/solutions" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                Personal Credit
+                SME Loans
               </Link>
               <Link to="/solutions" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                Business Credit
+                Personal Loan
               </Link>
               <Link to="/solutions" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                Growth Financing
+                Salary Loans
+              </Link>
+              <Link to="/solutions" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                Agricultural Loan
+              </Link>
+              <Link to="/solutions" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                Group Loans
+              </Link>
+              <Link to="/solutions" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                Educational Loan
               </Link>
             </div>
           </div>
@@ -60,17 +69,25 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-foreground font-semibold">Contact Us</h4>
             <div className="flex flex-col gap-3">
-              <a href="tel:08187052728" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                08187052728
-              </a>
               <a href="tel:09049371418" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                09049371418
+                0904 937 1418
               </a>
-              <a href="https://instagram.com/Zykacreditlimited" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
+              <a href="tel:08187052728" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                0818 705 2728
+              </a>
+              <a href="https://instagram.com/zykascredit_limited" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
                 <Instagram className="w-4 h-4" />
-                @Zykacreditlimited
+                @zykascredit_limited
+              </a>
+              <a href="https://www.zykacredit.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
+                <Globe className="w-4 h-4" />
+                www.zykacredit.com
+              </a>
+              <a href="https://facebook.com/ZykaCreditLimited" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
+                <Facebook className="w-4 h-4" />
+                Zyka Credit Limited
               </a>
             </div>
           </div>
@@ -79,7 +96,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} ZykaCredit. All rights reserved.
+            © {new Date().getFullYear()} Zyka Credit Limited. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link to="/contact" className="text-muted-foreground text-sm hover:text-primary transition-colors">
