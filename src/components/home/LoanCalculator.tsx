@@ -27,14 +27,9 @@ interface Valuable {
 }
 
 const valuableTypes: Omit<Valuable, 'value'>[] = [
-  { id: 'electronics', name: 'Electronics', icon: Smartphone, ltvRatio: 0.5, description: 'Phones, tablets, cameras' },
-  { id: 'laptop', name: 'Laptop/Computer', icon: Laptop, ltvRatio: 0.45, description: 'Working laptops & desktops' },
-  { id: 'television', name: 'Television', icon: Tv, ltvRatio: 0.4, description: 'LED/Smart TVs' },
   { id: 'jewelry', name: 'Gold & Jewelry', icon: Gem, ltvRatio: 0.7, description: 'Gold, diamonds, precious items' },
-  { id: 'watch', name: 'Watches', icon: Watch, ltvRatio: 0.6, description: 'Luxury & branded watches' },
   { id: 'vehicle', name: 'Vehicle', icon: Car, ltvRatio: 0.55, description: 'Cars, motorcycles, trucks' },
   { id: 'property', name: 'Property Documents', icon: Home, ltvRatio: 0.65, description: 'Land & building papers' },
-  { id: 'other', name: 'Other Assets', icon: CircleDollarSign, ltvRatio: 0.35, description: 'Equipment, inventory, etc.' },
 ];
 
 const LoanCalculator = () => {
