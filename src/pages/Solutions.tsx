@@ -2,15 +2,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { User, Building2, TrendingUp, ArrowRight, CheckCircle } from "lucide-react";
-import personalCreditImg from "@/assets/personal-credit.jpg";
-import businessCreditImg from "@/assets/business-credit.jpg";
-import growthFinancingImg from "@/assets/growth-financing.jpg";
+import { User, Building2, TrendingUp, Briefcase, GraduationCap, Users, ArrowRight, CheckCircle, Wheat } from "lucide-react";
+import teamGroup from "@/assets/team-group.jpg";
+import teamZyka from "@/assets/team-zyka.jpg";
 
 const solutions = [
   {
+    icon: Briefcase,
+    title: "SME Loans",
+    subtitle: "For Small & Medium Enterprises",
+    description: "Fuel your business growth with capital designed for operations, inventory, equipment, and expansion.",
+    features: [
+      "Working capital solutions",
+      "Equipment financing",
+      "Inventory funding",
+      "Expansion capital",
+    ],
+  },
+  {
     icon: User,
-    title: "Personal Credit",
+    title: "Personal Loans",
     subtitle: "For Individuals",
     description: "Access funds for personal needs—emergencies, education, home improvements, or life's important moments.",
     features: [
@@ -19,33 +30,54 @@ const solutions = [
       "Competitive rates",
       "No collateral required for select products",
     ],
-    image: personalCreditImg,
   },
   {
     icon: Building2,
-    title: "Business Credit",
-    subtitle: "For SMEs & Enterprises",
-    description: "Fuel your business growth with capital designed for operations, inventory, equipment, and expansion.",
+    title: "Salary Loans",
+    subtitle: "For Employed Individuals",
+    description: "Get quick access to funds based on your salary. Perfect for covering unexpected expenses before payday.",
     features: [
-      "Working capital solutions",
-      "Equipment financing",
-      "Inventory funding",
-      "Expansion capital",
+      "Fast approval process",
+      "Repayment from salary",
+      "Minimal documentation",
+      "Competitive interest rates",
     ],
-    image: businessCreditImg,
   },
   {
-    icon: TrendingUp,
-    title: "Growth Financing",
-    subtitle: "For Scaling Businesses",
-    description: "Strategic capital for businesses ready to scale. Bridge cash flow gaps and seize growth opportunities.",
+    icon: Wheat,
+    title: "Agricultural Loans",
+    subtitle: "For Farmers & Agribusiness",
+    description: "Supporting agricultural ventures with capital for seeds, equipment, livestock, and farm expansion.",
     features: [
-      "Larger credit facilities",
-      "Longer repayment periods",
-      "Structured disbursement",
-      "Dedicated account management",
+      "Seasonal repayment options",
+      "Farm equipment financing",
+      "Livestock funding",
+      "Crop production support",
     ],
-    image: growthFinancingImg,
+  },
+  {
+    icon: Users,
+    title: "Group Loans",
+    subtitle: "For Cooperative Groups",
+    description: "Collective credit solutions for groups, cooperatives, and associations looking to grow together.",
+    features: [
+      "Shared responsibility",
+      "Lower interest rates",
+      "Group accountability",
+      "Community building",
+    ],
+  },
+  {
+    icon: GraduationCap,
+    title: "Educational Loans",
+    subtitle: "For Students & Parents",
+    description: "Invest in education with loans designed to cover tuition, books, and other academic expenses.",
+    features: [
+      "Covers all educational levels",
+      "Flexible repayment after graduation",
+      "Competitive rates",
+      "Quick disbursement",
+    ],
   },
 ];
 
@@ -65,68 +97,96 @@ const Solutions = () => {
                 Solutions Designed for <span className="text-gradient-gold">Your Growth</span>
               </h1>
               <p className="text-lg text-muted-foreground">
-                Whether you're an individual or a business, we have credit solutions tailored to your unique needs.
+                Whether you're an individual, business, or group, we have credit solutions tailored to your unique needs.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Solutions */}
+        {/* Team Image Banner */}
+        <section className="section-padding !py-8">
+          <div className="container-tight">
+            <div className="relative rounded-2xl overflow-hidden h-64 md:h-80">
+              <img
+                src={teamGroup}
+                alt="ZykaCredit Team"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent flex items-center">
+                <div className="p-8 md:p-12 max-w-lg">
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-2">
+                    We're Here to Help You Grow
+                  </h2>
+                  <p className="text-muted-foreground">
+                    Our dedicated team is committed to providing the best credit solutions for your needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Solutions Grid */}
         <section className="section-padding bg-card">
           <div className="container-tight">
-            <div className="space-y-24">
-              {solutions.map((solution, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {solutions.map((solution) => (
                 <div
                   key={solution.title}
-                  className={`flex flex-col lg:flex-row gap-12 items-center ${
-                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                  }`}
+                  className="p-8 rounded-2xl bg-gradient-card border border-border/50 hover:border-primary/30 transition-all duration-300 group"
                 >
-                  {/* Content */}
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                        <solution.icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <span className="text-sm text-muted-foreground">{solution.subtitle}</span>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <solution.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h2 className="font-serif text-3xl font-bold text-foreground mb-4">
-                      {solution.title}
-                    </h2>
-                    <p className="text-muted-foreground text-lg mb-6">
-                      {solution.description}
-                    </p>
-                    <ul className="space-y-3 mb-8">
-                      {solution.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-3 text-muted-foreground">
-                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <Button variant="cta" asChild>
-                      <Link to="/apply">
-                        Apply Now <ArrowRight className="w-4 h-4 ml-1" />
-                      </Link>
-                    </Button>
+                    <span className="text-sm text-muted-foreground">{solution.subtitle}</span>
                   </div>
-
-                  {/* Image */}
-                  <div className="flex-1">
-                    <div className="relative max-w-md mx-auto">
-                      <div className="aspect-square rounded-2xl overflow-hidden border border-border/50 shadow-glow">
-                        <img
-                          src={solution.image}
-                          alt={solution.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      {/* Decorative accent */}
-                      <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl bg-gradient-primary opacity-20 -z-10" />
-                    </div>
-                  </div>
+                  <h3 className="font-serif text-2xl font-bold text-foreground mb-3">
+                    {solution.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6">
+                    {solution.description}
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    {solution.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button variant="cta" size="sm" asChild className="w-full">
+                    <Link to="/apply">
+                      Apply Now <ArrowRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  </Button>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Bottom Team Image */}
+        <section className="section-padding">
+          <div className="container-tight">
+            <div className="relative rounded-2xl overflow-hidden">
+              <img
+                src={teamZyka}
+                alt="ZykaCredit Team Together"
+                className="w-full h-64 md:h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent flex items-end">
+                <div className="p-8 md:p-12 text-center w-full">
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
+                    Ready to Get Started?
+                  </h2>
+                  <Button variant="hero" size="lg" asChild>
+                    <Link to="/apply">
+                      Apply for Credit Today <ArrowRight className="w-5 h-5 ml-1" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </section>

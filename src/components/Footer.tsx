@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { TrendingUp, Phone, Instagram, Globe, Facebook } from "lucide-react";
+import { Phone, Instagram, Globe, Facebook } from "lucide-react";
+import logoWhite from "@/assets/logo-white.png";
 
 const Footer = () => {
   return (
@@ -9,12 +10,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow">
-                <TrendingUp className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold text-foreground">
-                Zyka<span className="text-gradient-primary">Credit</span>
-              </span>
+              <img src={logoWhite} alt="ZykaCredit" className="h-12 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Efficient. Reliable. Easily Accessible. Smart credit solutions for individuals and businesses.
