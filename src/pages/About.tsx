@@ -1,6 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { TrendingUp, Target, Users, Award } from "lucide-react";
+import ceoImage from "@/assets/ceo.jpg";
+import teamGroup from "@/assets/team-group.jpg";
+import teamZyka from "@/assets/team-zyka.jpg";
 
 const About = () => {
   return (
@@ -10,16 +13,28 @@ const About = () => {
         {/* Hero */}
         <section className="section-padding">
           <div className="container-tight">
-            <div className="max-w-3xl">
-              <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-                About ZykaCredit
-              </span>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Bridging Ambition <span className="text-gradient-gold">and Access</span>
-              </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                ZykaCredit was built to bridge the gap between ambition and access by offering credit solutions that are fair, structured, and growth-focused. We believe that access to capital should not be a barrier to progress.
-              </p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="max-w-xl">
+                <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+                  About ZykaCredit
+                </span>
+                <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+                  Bridging Ambition <span className="text-gradient-gold">and Access</span>
+                </h1>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  ZykaCredit was built to bridge the gap between ambition and access by offering credit solutions that are fair, structured, and growth-focused. We believe that access to capital should not be a barrier to progress.
+                </p>
+              </div>
+              <div className="relative">
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-border/50 shadow-glow max-w-sm mx-auto lg:ml-auto">
+                  <img
+                    src={ceoImage}
+                    alt="ZykaCredit CEO"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -left-4 w-full h-full rounded-2xl bg-gradient-primary opacity-20 -z-10" />
+              </div>
             </div>
           </div>
         </section>
@@ -50,8 +65,41 @@ const About = () => {
           </div>
         </section>
 
-        {/* Values */}
+        {/* Team Section */}
         <section className="section-padding">
+          <div className="container-tight">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+                Our Team
+              </span>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Meet the <span className="text-gradient-primary">ZykaCredit Family</span>
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                A dedicated team of professionals committed to helping you achieve your financial goals.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="rounded-2xl overflow-hidden border border-border/50 shadow-glow">
+                <img
+                  src={teamGroup}
+                  alt="ZykaCredit Team Group"
+                  className="w-full h-72 md:h-80 object-cover"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden border border-border/50 shadow-glow">
+                <img
+                  src={teamZyka}
+                  alt="ZykaCredit Team Together"
+                  className="w-full h-72 md:h-80 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Values */}
+        <section className="section-padding bg-card">
           <div className="container-tight">
             <div className="text-center mb-16">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
