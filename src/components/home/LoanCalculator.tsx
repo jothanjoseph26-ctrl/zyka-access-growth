@@ -2,14 +2,8 @@ import { useState, useMemo } from "react";
 import { 
   Calculator, 
   ArrowRight, 
-  Smartphone, 
-  Watch, 
   Car, 
-  Home, 
   Gem, 
-  Tv,
-  Laptop,
-  CircleDollarSign,
   CheckCircle,
   Sparkles
 } from "lucide-react";
@@ -29,7 +23,6 @@ interface Valuable {
 const valuableTypes: Omit<Valuable, 'value'>[] = [
   { id: 'jewelry', name: 'Gold & Jewelry', icon: Gem, ltvRatio: 0.7, description: 'Gold, diamonds, precious items' },
   { id: 'vehicle', name: 'Vehicle', icon: Car, ltvRatio: 0.55, description: 'Cars, motorcycles, trucks' },
-  { id: 'property', name: 'Property Documents', icon: Home, ltvRatio: 0.65, description: 'Land & building papers' },
 ];
 
 const LoanCalculator = () => {
@@ -96,7 +89,7 @@ const LoanCalculator = () => {
   const hasValues = Object.values(valuables).some(v => v > 0);
 
   return (
-    <section className="section-padding bg-card">
+    <section className="section-padding bg-card" id="calculator">
       <div className="container-tight">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-4">

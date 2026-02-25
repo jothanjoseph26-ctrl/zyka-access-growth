@@ -20,8 +20,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent/10 hover:text-accent",
         link: "text-primary underline-offset-4 hover:underline",
         // Premium ZykaCredit variants
-        hero: "bg-gradient-gold text-accent-foreground font-bold shadow-gold hover:shadow-lg hover:scale-[1.03] active:scale-[0.98]",
-        heroOutline: "border-2 border-accent/60 text-accent hover:bg-accent/10 hover:border-accent",
+        hero: "bg-gradient-gold text-primary-foreground font-bold shadow-gold hover:shadow-lg hover:scale-[1.03] active:scale-[0.98]",
+        heroOutline: "border-2 border-primary/60 text-primary hover:bg-primary/10 hover:border-primary",
         cta: "bg-gradient-primary text-primary-foreground font-bold shadow-glow hover:shadow-lg hover:scale-[1.02]",
         subtle: "bg-card/80 text-foreground hover:bg-card border border-border/50",
       },
