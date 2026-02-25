@@ -10,6 +10,8 @@ import HowItWorks from "./pages/HowItWorks";
 import Contact from "./pages/Contact";
 import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
+import SEOManager from "./pages/admin/SEOManager";
+import GoogleBusinessManager from "./pages/admin/GoogleBusinessManager";
 
 const queryClient = new QueryClient();
 
@@ -25,7 +27,9 @@ const App = () => (
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/apply" element={<Apply />} />
+<Route path="/apply" element={<Apply />} />
+          <Route path="/admin/seo" element={<SEOManager />} />
+          <Route path="/admin/google-business" element={<GoogleBusinessManager />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
