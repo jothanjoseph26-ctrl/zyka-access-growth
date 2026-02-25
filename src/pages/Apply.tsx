@@ -6,23 +6,59 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Apply = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [creditType, setCreditType] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    amount: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!creditType) {
+      toast({ title: "Please select a loan type", variant: "destructive" });
+      return;
+    }
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-email", {
+        body: {
+          type: "application",
+          data: { ...formData, creditType },
+        },
+      });
+
+      if (error) throw error;
+
       toast({
         title: "Application Submitted!",
-        description: "We'll review your application and get back to you within 2-3 business days.",
+        description: "We'll review your application and get back to you within 2-3 business days. A confirmation email has been sent.",
       });
-    }, 1500);
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", amount: "", message: "" });
+      setCreditType("");
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -67,27 +103,27 @@ const Apply = () => {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label className="text-sm text-muted-foreground mb-2 block">First Name *</label>
-                        <Input placeholder="John" required className="bg-secondary border-border/50" />
+                        <Input name="firstName" value={formData.firstName} onChange={handleChange} placeholder="John" required className="bg-secondary border-border/50" />
                       </div>
                       <div>
                         <label className="text-sm text-muted-foreground mb-2 block">Last Name *</label>
-                        <Input placeholder="Doe" required className="bg-secondary border-border/50" />
+                        <Input name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Doe" required className="bg-secondary border-border/50" />
                       </div>
                     </div>
 
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label className="text-sm text-muted-foreground mb-2 block">Email *</label>
-                        <Input type="email" placeholder="john@example.com" required className="bg-secondary border-border/50" />
+                        <Input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" required className="bg-secondary border-border/50" />
                       </div>
                       <div>
                         <label className="text-sm text-muted-foreground mb-2 block">Phone *</label>
-                        <Input type="tel" placeholder="08012345678" required className="bg-secondary border-border/50" />
+                        <Input name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="08012345678" required className="bg-secondary border-border/50" />
                       </div>
                     </div>
 
                     <div>
-                      <label className="text-sm text-muted-foreground mb-2 block">Type of Credit *</label>
+                      <label className="text-sm text-muted-foreground mb-2 block">Type of Loan *</label>
                       <div className="grid sm:grid-cols-3 gap-3">
                         {["SME Loan", "Personal Loan", "Salary Loan", "Agricultural Loan", "Group Loan", "Educational Loan"].map((type) => (
                           <button
@@ -108,12 +144,15 @@ const Apply = () => {
 
                     <div>
                       <label className="text-sm text-muted-foreground mb-2 block">Estimated Amount Needed</label>
-                      <Input type="text" placeholder="e.g., ₦500,000 - ₦1,000,000" className="bg-secondary border-border/50" />
+                      <Input name="amount" type="text" value={formData.amount} onChange={handleChange} placeholder="e.g., ₦500,000 - ₦1,000,000" className="bg-secondary border-border/50" />
                     </div>
 
                     <div>
                       <label className="text-sm text-muted-foreground mb-2 block">Tell us about your needs</label>
                       <Textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         placeholder="Briefly describe what you need the credit for..."
                         rows={4}
                         className="bg-secondary border-border/50 resize-none"

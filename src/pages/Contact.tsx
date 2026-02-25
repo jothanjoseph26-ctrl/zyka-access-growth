@@ -6,23 +6,52 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, Instagram, MapPin, Send, Building2 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-email", {
+        body: {
+          type: "contact",
+          data: formData,
+        },
+      });
+
+      if (error) throw error;
+
       toast({
         title: "Message Sent!",
-        description: "We'll get back to you within 24 hours.",
+        description: "We'll get back to you within 24 hours. A confirmation email has been sent.",
       });
-    }, 1000);
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Failed to send",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -55,10 +84,7 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <a
-                    href="mailto:zykascreditlimited@gmail.com"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group"
-                  >
+                  <a href="mailto:zykascreditlimited@gmail.com" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
@@ -68,10 +94,7 @@ const Contact = () => {
                     </div>
                   </a>
 
-                  <a
-                    href="tel:08187052728"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group"
-                  >
+                  <a href="tel:08187052728" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
@@ -81,10 +104,7 @@ const Contact = () => {
                     </div>
                   </a>
 
-                  <a
-                    href="tel:09049371418"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group"
-                  >
+                  <a href="tel:09049371418" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
@@ -94,12 +114,7 @@ const Contact = () => {
                     </div>
                   </a>
 
-                  <a
-                    href="https://instagram.com/Zykacreditlimited"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group"
-                  >
+                  <a href="https://instagram.com/Zykacreditlimited" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Instagram className="w-5 h-5 text-primary" />
                     </div>
@@ -118,24 +133,27 @@ const Contact = () => {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm text-muted-foreground mb-2 block">First Name</label>
-                      <Input placeholder="John" required className="bg-secondary border-border/50" />
+                      <Input name="firstName" value={formData.firstName} onChange={handleChange} placeholder="John" required className="bg-secondary border-border/50" />
                     </div>
                     <div>
                       <label className="text-sm text-muted-foreground mb-2 block">Last Name</label>
-                      <Input placeholder="Doe" required className="bg-secondary border-border/50" />
+                      <Input name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Doe" required className="bg-secondary border-border/50" />
                     </div>
                   </div>
                   <div>
                     <label className="text-sm text-muted-foreground mb-2 block">Email</label>
-                    <Input type="email" placeholder="john@example.com" required className="bg-secondary border-border/50" />
+                    <Input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" required className="bg-secondary border-border/50" />
                   </div>
                   <div>
                     <label className="text-sm text-muted-foreground mb-2 block">Phone</label>
-                    <Input type="tel" placeholder="08012345678" className="bg-secondary border-border/50" />
+                    <Input name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="08012345678" className="bg-secondary border-border/50" />
                   </div>
                   <div>
                     <label className="text-sm text-muted-foreground mb-2 block">Message</label>
                     <Textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Tell us how we can help..."
                       rows={4}
                       required
