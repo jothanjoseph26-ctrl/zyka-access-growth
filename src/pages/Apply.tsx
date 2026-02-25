@@ -34,7 +34,7 @@ const Apply = () => {
             <div className="grid lg:grid-cols-5 gap-12">
               {/* Info Side */}
               <div className="lg:col-span-2">
-                <span className="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-6">
+                <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
                   Get Started
                 </span>
                 <h1 className="font-serif text-4xl font-bold text-foreground mb-6">
@@ -89,7 +89,7 @@ const Apply = () => {
                     <div>
                       <label className="text-sm text-muted-foreground mb-2 block">Type of Credit *</label>
                       <div className="grid sm:grid-cols-3 gap-3">
-                        {["Personal Credit", "Business Credit", "Growth Financing"].map((type) => (
+                        {["SME Loan", "Personal Loan", "Salary Loan", "Agricultural Loan", "Group Loan", "Educational Loan"].map((type) => (
                           <button
                             key={type}
                             type="button"

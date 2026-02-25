@@ -8,15 +8,14 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center pt-20">
       {/* Background with CEO Portrait */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 overflow-hidden">
+      <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 overflow-hidden">
           <img
             src={ceoImage}
             alt="ZykaCredit CEO"
-            className="w-full h-full object-cover object-top opacity-40 lg:opacity-60"
+            className="w-full h-full object-cover object-top opacity-60 lg:opacity-90"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-background/90 lg:bg-gradient-to-r lg:from-background lg:via-background/95 lg:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/40 lg:from-background lg:via-background/90 lg:to-transparent" />
       </div>
 
       {/* Content */}

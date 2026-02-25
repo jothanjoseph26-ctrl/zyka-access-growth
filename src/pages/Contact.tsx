@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, Instagram, MapPin, Send } from "lucide-react";
+import { Phone, Mail, Instagram, MapPin, Send, Building2 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -45,6 +45,29 @@ const Contact = () => {
                 </p>
 
                 <div className="space-y-6">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border/50">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Building2 className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Office Address</p>
+                      <p className="text-foreground font-medium">Suite 13, Purple Stone Plaza,<br />Apo Resettlement, Abuja, Nigeria.</p>
+                    </div>
+                  </div>
+
+                  <a
+                    href="mailto:zykascreditlimited@gmail.com"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Mail className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Email</p>
+                      <p className="text-foreground font-medium">zykascreditlimited@gmail.com</p>
+                    </div>
+                  </a>
+
                   <a
                     href="tel:08187052728"
                     className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group"
@@ -54,7 +77,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Phone</p>
-                      <p className="text-foreground font-medium">08187052728</p>
+                      <p className="text-foreground font-medium">0818 705 2728</p>
                     </div>
                   </a>
 
@@ -67,7 +90,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Phone (Alt)</p>
-                      <p className="text-foreground font-medium">09049371418</p>
+                      <p className="text-foreground font-medium">0904 937 1418</p>
                     </div>
                   </a>
 
@@ -75,10 +98,10 @@ const Contact = () => {
                     href="https://instagram.com/Zykacreditlimited"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-accent/30 transition-all group"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                      <Instagram className="w-5 h-5 text-accent" />
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Instagram className="w-5 h-5 text-primary" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Instagram</p>

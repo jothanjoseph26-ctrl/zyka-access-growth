@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Instagram, Globe, Facebook } from "lucide-react";
+import { Phone, Instagram, Globe, Facebook, MapPin, Mail } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
 
 const Footer = () => {
@@ -65,6 +65,14 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-foreground font-semibold">Contact Us</h4>
             <div className="flex flex-col gap-3">
+              <div className="text-muted-foreground text-sm flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>Suite 13, Purple Stone Plaza,<br />Apo Resettlement,<br />Abuja, Nigeria.</span>
+              </div>
+              <a href="mailto:zykascreditlimited@gmail.com" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                zykascreditlimited@gmail.com
+              </a>
               <a href="tel:09049371418" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 0904 937 1418
@@ -76,10 +84,6 @@ const Footer = () => {
               <a href="https://instagram.com/zykascredit_limited" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
                 <Instagram className="w-4 h-4" />
                 @zykascredit_limited
-              </a>
-              <a href="https://www.zykacredit.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
-                <Globe className="w-4 h-4" />
-                www.zykacredit.com
               </a>
               <a href="https://facebook.com/ZykaCreditLimited" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-sm hover:text-primary transition-colors flex items-center gap-2">
                 <Facebook className="w-4 h-4" />
