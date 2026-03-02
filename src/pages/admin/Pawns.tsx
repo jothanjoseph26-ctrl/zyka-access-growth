@@ -100,7 +100,7 @@ export default function PawnsPage() {
               <QrCode className="mr-2 h-4 w-4" />
               Scan Ticket
             </Button>
-            <Button asChild className="bg-amber-600 hover:bg-amber-700">
+            <Button asChild className="bg-primary hover:bg-primary/90">
               <Link to="/admin/pawns/new">
                 <Plus className="mr-2 h-4 w-4" />
                 New Pawn

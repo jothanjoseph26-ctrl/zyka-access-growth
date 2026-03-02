@@ -12,6 +12,8 @@ import {
   Bell,
   User,
   LogOut,
+  Calculator,
+  Phone,
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -41,8 +43,8 @@ export default function CustomerDashboard() {
       <header className="bg-white border-b sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-amber-600 rounded-lg flex items-center justify-center">
-              <Coins className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+              <Coins className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="font-bold text-xl">Zyka Credit</span>
           </Link>
@@ -70,7 +72,7 @@ export default function CustomerDashboard() {
         <div className="grid grid-cols-3 gap-4">
           <Card>
             <CardContent className="p-4 text-center">
-              <Coins className="h-6 w-6 text-amber-600 mx-auto mb-2" />
+              <Coins className="h-6 w-6 text-primary mx-auto mb-2" />
               <p className="text-2xl font-bold">{totalActive}</p>
               <p className="text-sm text-gray-500">Active Pawns</p>
             </CardContent>
@@ -155,7 +157,7 @@ export default function CustomerDashboard() {
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <Button className="flex-1 bg-amber-600 hover:bg-amber-700">
+                    <Button className="flex-1 bg-primary hover:bg-primary/90">
                       Pay Interest
                     </Button>
                     <Button variant="outline" className="flex-1">
@@ -193,7 +195,7 @@ export default function CustomerDashboard() {
 
         {/* Quick Actions */}
         <div className="grid grid-cols-2 gap-4">
-          <Button className="h-auto py-4 flex flex-col items-center gap-2 bg-amber-600 hover:bg-amber-700">
+          <Button className="h-auto py-4 flex flex-col items-center gap-2 bg-primary hover:bg-primary/90">
             <Calculator className="h-6 w-6" />
             <span>Valuation Calculator</span>
           </Button>

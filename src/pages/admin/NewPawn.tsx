@@ -301,7 +301,7 @@ export default function NewPawnPage() {
                 <div className="space-y-2">
                   <Label>Loan-to-Value (LTV)</Label>
                   <div className="p-3 bg-gray-50 rounded-lg">
-                    <span className="text-2xl font-bold text-amber-600">
+                    <span className="text-2xl font-bold text-primary">
                       {formData.marketValue ? Math.round(parseFloat(formData.marketValue) * 0.75).toLocaleString() : "0"}
                     </span>
                     <span className="text-gray-500 text-sm ml-1"> (75%)</span>
@@ -372,15 +372,15 @@ export default function NewPawnPage() {
               </div>
 
               {/* Interest Summary */}
-              <div className="bg-amber-50 rounded-lg p-4 mt-4">
+              <div className="bg-primary/10 rounded-lg p-4 mt-4">
                 <div className="flex justify-between items-center">
                   <div>
-                    <p className="text-sm text-amber-700">Interest Amount</p>
-                    <p className="text-2xl font-bold text-amber-900">₹{calculateInterest().toLocaleString()}</p>
+                    <p className="text-sm text-primary">Interest Amount</p>
+                    <p className="text-2xl font-bold text-foreground">₦{calculateInterest().toLocaleString()}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm text-amber-700">Total Repayment</p>
-                    <p className="text-2xl font-bold text-amber-900">
+                    <p className="text-sm text-primary">Total Repayment</p>
+                    <p className="text-2xl font-bold text-foreground">
                       ₹{(parseFloat(formData.loanAmount || "0") + calculateInterest()).toLocaleString()}
                     </p>
                   </div>
@@ -403,7 +403,7 @@ export default function NewPawnPage() {
             <Button variant="outline" type="button" onClick={() => navigate("/admin/pawns")}>
               Cancel
             </Button>
-            <Button type="submit" className="bg-amber-600 hover:bg-amber-700">
+            <Button type="submit" className="bg-primary hover:bg-primary/90">
               <Save className="mr-2 h-4 w-4" />
               Create Pawn Ticket
             </Button>
