@@ -11,11 +11,13 @@ import {
   ChevronRight,
   Bell,
   User,
-  LogOut,
+  Calculator,
+  Phone,
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Logo from "@/assets/logo.png";
 
 const customerPawns = [
   { id: "P-2024-001", type: "gold", item: "Gold Chain (24K, 15g)", amount: 45000, interestDue: 1800, maturityDate: "2024-02-14", status: "active", daysLeft: 15 },
@@ -41,10 +43,7 @@ export default function CustomerDashboard() {
       <header className="bg-white border-b sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-amber-600 rounded-lg flex items-center justify-center">
-              <Coins className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-bold text-xl">Zyka Credit</span>
+            <img src={Logo} alt="Zyka Credit" className="h-10 w-auto" />
           </Link>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="icon">
