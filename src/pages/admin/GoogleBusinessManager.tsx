@@ -10,7 +10,7 @@ import { Switch } from '@/components/ui/switch';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Plus, Trash2, Star, MapPin, Phone, Globe, Clock, Image, Send, RefreshCw } from 'lucide-react';
-import type { GoogleBusinessProfile, Post, Review, BusinessHours } from '../integrations/google/types';
+import type { GoogleBusinessProfile, Post, Review, BusinessHours } from '@/integrations/google/types';
 
 const mockBusiness: GoogleBusinessProfile = {
   id: '1',

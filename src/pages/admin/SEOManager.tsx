@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Switch } from '@/components/ui/switch';
 import { Plus, Trash2, Save, Eye, Code } from 'lucide-react';
-import type { SEOPageConfig, StructuredData } from '../seo/types';
+import type { SEOPageConfig, StructuredData } from '@/integrations/seo/types';
 
 const defaultPages: SEOPageConfig[] = [
   { path: '/', title: 'Home', description: '', keywords: [] },
