@@ -61,7 +61,7 @@ export default function CustomersPage() {
             <h1 className="text-2xl font-bold text-gray-900">Customers</h1>
             <p className="text-gray-500">Manage customer database</p>
           </div>
-          <Button className="bg-amber-600 hover:bg-amber-700">
+          <Button className="bg-primary hover:bg-primary/90">
             <Plus className="mr-2 h-4 w-4" />
             Add Customer
           </Button>
@@ -93,8 +93,8 @@ export default function CustomersPage() {
           </Card>
           <Card>
             <CardContent className="p-4 flex items-center gap-4">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
-                <Coins className="h-6 w-6 text-amber-600" />
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Coins className="h-6 w-6 text-primary" />
               </div>
               <div>
                 <p className="text-sm text-gray-500">Total Value</p>
@@ -139,8 +139,8 @@ export default function CustomersPage() {
                   <TableRow key={customer.id}>
                     <TableCell>
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
-                          <span className="text-amber-700 font-medium">
+                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                          <span className="text-primary font-medium">
                             {customer.name.charAt(0)}
                           </span>
                         </div>

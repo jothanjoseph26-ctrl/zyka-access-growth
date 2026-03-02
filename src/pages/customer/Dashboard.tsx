@@ -69,7 +69,7 @@ export default function CustomerDashboard() {
         <div className="grid grid-cols-3 gap-4">
           <Card>
             <CardContent className="p-4 text-center">
-              <Coins className="h-6 w-6 text-amber-600 mx-auto mb-2" />
+              <Coins className="h-6 w-6 text-primary mx-auto mb-2" />
               <p className="text-2xl font-bold">{totalActive}</p>
               <p className="text-sm text-gray-500">Active Pawns</p>
             </CardContent>
@@ -154,7 +154,7 @@ export default function CustomerDashboard() {
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <Button className="flex-1 bg-amber-600 hover:bg-amber-700">
+                    <Button className="flex-1 bg-primary hover:bg-primary/90">
                       Pay Interest
                     </Button>
                     <Button variant="outline" className="flex-1">
@@ -192,7 +192,7 @@ export default function CustomerDashboard() {
 
         {/* Quick Actions */}
         <div className="grid grid-cols-2 gap-4">
-          <Button className="h-auto py-4 flex flex-col items-center gap-2 bg-amber-600 hover:bg-amber-700">
+          <Button className="h-auto py-4 flex flex-col items-center gap-2 bg-primary hover:bg-primary/90">
             <Calculator className="h-6 w-6" />
             <span>Valuation Calculator</span>
           </Button>
