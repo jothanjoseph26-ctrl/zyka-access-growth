@@ -10,6 +10,14 @@ import HowItWorks from "./pages/HowItWorks";
 import Contact from "./pages/Contact";
 import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
+import SEOManager from "./pages/admin/SEOManager";
+import GoogleBusinessManager from "./pages/admin/GoogleBusinessManager";
+import AdminDashboard from "./pages/admin/Dashboard";
+import PawnsPage from "./pages/admin/Pawns";
+import NewPawnPage from "./pages/admin/NewPawn";
+import CustomersPage from "./pages/admin/Customers";
+import CustomerDashboard from "./pages/customer/Dashboard";
+import CalculatorPage from "./pages/customer/Calculator";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +34,14 @@ const App = () => (
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/apply" element={<Apply />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/calculator" element={<CalculatorPage />} />
+          <Route path="/dashboard" element={<CustomerDashboard />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/pawns" element={<PawnsPage />} />
+          <Route path="/admin/pawns/new" element={<NewPawnPage />} />
+          <Route path="/admin/customers" element={<CustomersPage />} />
+          <Route path="/admin/seo" element={<SEOManager />} />
+          <Route path="/admin/google-business" element={<GoogleBusinessManager />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
