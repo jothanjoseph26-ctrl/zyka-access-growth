@@ -34,9 +34,11 @@ import logoWhite from "@/assets/logo-white.png";
 const navItems = [
   { title: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { title: "Pawns", href: "/admin/pawns", icon: Coins },
+  { title: "Gold", href: "/admin/gold", icon: Gem },
+  { title: "Vehicles", href: "/admin/vehicles", icon: Car },
   { title: "Customers", href: "/admin/customers", icon: Users },
+  { title: "Documents", href: "/admin/documents", icon: FileText },
   { title: "Reports", href: "/admin/reports", icon: BarChart3 },
-  { title: "SEO", href: "/admin/seo", icon: Globe },
   { title: "Settings", href: "/admin/settings", icon: Settings },
 ];
 
