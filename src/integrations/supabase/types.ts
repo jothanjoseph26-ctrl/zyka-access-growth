@@ -107,27 +107,54 @@ export interface Settings {
 }
 
 export type Database = {
-  // Allows to automatically instantiate createClient with right options
-  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
-  __InternalSupabase: {
-    PostgrestVersion: "14.1"
-  }
   public: {
     Tables: {
-      [_ in never]: never
+      customers: {
+        Row: Customer
+        Insert: Omit<Customer, "id" | "created_at" | "updated_at">
+        Update: Partial<Omit<Customer, "id" | "created_at">>
+      }
+      pawns: {
+        Row: Pawn
+        Insert: Omit<Pawn, "id" | "created_at" | "updated_at" | "ticket_number">
+        Update: Partial<Omit<Pawn, "id" | "created_at" | "ticket_number">>
+      }
+      payments: {
+        Row: Payment
+        Insert: Omit<Payment, "id" | "created_at">
+        Update: Partial<Omit<Payment, "id">>
+      }
+      pawn_extensions: {
+        Row: PawnExtension
+        Insert: Omit<PawnExtension, "id" | "created_at">
+        Update: Partial<Omit<PawnExtension, "id">>
+      }
+      gold_rates: {
+        Row: GoldRate
+        Insert: Omit<GoldRate, "id" | "created_at">
+        Update: Partial<Omit<GoldRate, "id">>
+      }
+      settings: {
+        Row: Settings
+        Insert: Omit<Settings, "updated_at">
+        Update: Partial<Omit<Settings, "updated_at">>
+      }
+      audit_logs: {
+        Row: AuditLog
+        Insert: Omit<AuditLog, "id" | "created_at">
+        Update: Partial<Omit<AuditLog, "id" | "created_at">>
+      }
     }
-    Views: {
-      [_ in never]: never
-    }
-    Functions: {
-      [_ in never]: never
-    }
+    Views: {}
+    Functions: {}
     Enums: {
-      [_ in never]: never
+      pawn_status: PawnStatus
+      collateral_type: CollateralType
     }
-    CompositeTypes: {
-      [_ in never]: never
-    }
+    CompositeTypes: {}
+  }
+  __InternalSupabase: {
+    PostgrestVersion: "14.1"
   }
 }
 
