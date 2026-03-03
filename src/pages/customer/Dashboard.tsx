@@ -77,14 +77,14 @@ export default function CustomerDashboard() {
           <Card>
             <CardContent className="p-4 text-center">
               <DollarSign className="h-6 w-6 text-green-600 mx-auto mb-2" />
-              <p className="text-2xl font-bold">₹{totalValue.toLocaleString()}</p>
+              <p className="text-2xl font-bold">₦{totalValue.toLocaleString()}</p>
               <p className="text-sm text-gray-500">Total Value</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
               <Clock className="h-6 w-6 text-orange-600 mx-auto mb-2" />
-              <p className="text-2xl font-bold">₹{totalInterest.toLocaleString()}</p>
+              <p className="text-2xl font-bold">₦{totalInterest.toLocaleString()}</p>
               <p className="text-sm text-gray-500">Interest Due</p>
             </CardContent>
           </Card>
@@ -138,11 +138,11 @@ export default function CustomerDashboard() {
                   <div className="grid grid-cols-2 gap-4 text-sm mb-4">
                     <div>
                       <p className="text-gray-500">Loan Amount</p>
-                      <p className="font-semibold">₹{pawn.amount.toLocaleString()}</p>
+                      <p className="font-semibold">₦{pawn.amount.toLocaleString()}</p>
                     </div>
                     <div>
                       <p className="text-gray-500">Interest Due</p>
-                      <p className="font-semibold text-orange-600">₹{pawn.interestDue.toLocaleString()}</p>
+                      <p className="font-semibold text-orange-600">₦{pawn.interestDue.toLocaleString()}</p>
                     </div>
                     <div>
                       <p className="text-gray-500">Maturity Date</p>

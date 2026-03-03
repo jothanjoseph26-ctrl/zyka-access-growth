@@ -70,7 +70,7 @@ export default function CalculatorPage() {
                   <div key={type} className="flex items-center space-x-2">
                     <RadioGroupItem value={type} id={type} />
                     <Label htmlFor={type} className="cursor-pointer">
-                      {type} (₹{goldRates[type as keyof typeof goldRates].toLocaleString()}/10g)
+                      {type} (₦{goldRates[type as keyof typeof goldRates].toLocaleString()}/10g)
                     </Label>
                   </div>
                 ))}
@@ -120,7 +120,7 @@ export default function CalculatorPage() {
           <CardContent className="space-y-4">
             <div className="flex justify-between items-center py-2 border-b">
               <span className="text-gray-600">Gold Rate ({goldType})</span>
-              <span className="font-medium">₹{goldRates[goldType as keyof typeof goldRates].toLocaleString()}/10g</span>
+              <span className="font-medium">₦{goldRates[goldType as keyof typeof goldRates].toLocaleString()}/10g</span>
             </div>
             <div className="flex justify-between items-center py-2 border-b">
               <span className="text-gray-600">Weight</span>
@@ -128,15 +128,15 @@ export default function CalculatorPage() {
             </div>
             <div className="flex justify-between items-center py-2 border-b">
               <span className="text-gray-600">Market Value</span>
-              <span className="font-semibold text-lg">₹{marketValue.toLocaleString()}</span>
+              <span className="font-semibold text-lg">₦{marketValue.toLocaleString()}</span>
             </div>
             <div className="flex justify-between items-center py-2 border-b">
               <span className="text-gray-600">Loan Amount ({ltv}%)</span>
-              <span className="font-bold text-2xl text-amber-600">₹{loanAmount.toLocaleString()}</span>
+              <span className="font-bold text-2xl text-amber-600">₦{loanAmount.toLocaleString()}</span>
             </div>
             <div className="flex justify-between items-center py-2">
               <span className="text-gray-600">Interest (30 days @ 3%)</span>
-              <span className="font-medium text-orange-600">₹{interestAmount.toLocaleString()}</span>
+              <span className="font-medium text-orange-600">₦{interestAmount.toLocaleString()}</span>
             </div>
 
             <Button className="w-full bg-amber-600 hover:bg-amber-700 mt-4">

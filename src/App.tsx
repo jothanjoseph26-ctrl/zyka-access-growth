@@ -21,8 +21,10 @@ import VehiclesPage from "./pages/admin/Vehicles";
 import DocumentsPage from "./pages/admin/Documents";
 import ReportsPage from "./pages/admin/Reports";
 import SettingsPage from "./pages/admin/Settings";
+import AdminLogin from "./pages/admin/Login";
 import CustomerDashboard from "./pages/customer/Dashboard";
 import CalculatorPage from "./pages/customer/Calculator";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -41,17 +43,18 @@ const App = () => (
           <Route path="/apply" element={<Apply />} />
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/dashboard" element={<CustomerDashboard />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/pawns" element={<PawnsPage />} />
-          <Route path="/admin/pawns/new" element={<NewPawnPage />} />
-          <Route path="/admin/customers" element={<CustomersPage />} />
-          <Route path="/admin/gold" element={<GoldPage />} />
-          <Route path="/admin/vehicles" element={<VehiclesPage />} />
-          <Route path="/admin/documents" element={<DocumentsPage />} />
-          <Route path="/admin/reports" element={<ReportsPage />} />
-          <Route path="/admin/settings" element={<SettingsPage />} />
-          <Route path="/admin/seo" element={<SEOManager />} />
-          <Route path="/admin/google-business" element={<GoogleBusinessManager />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+          <Route path="/admin/pawns" element={<ProtectedRoute><PawnsPage /></ProtectedRoute>} />
+          <Route path="/admin/pawns/new" element={<ProtectedRoute><NewPawnPage /></ProtectedRoute>} />
+          <Route path="/admin/customers" element={<ProtectedRoute><CustomersPage /></ProtectedRoute>} />
+          <Route path="/admin/gold" element={<ProtectedRoute><GoldPage /></ProtectedRoute>} />
+          <Route path="/admin/vehicles" element={<ProtectedRoute><VehiclesPage /></ProtectedRoute>} />
+          <Route path="/admin/documents" element={<ProtectedRoute><DocumentsPage /></ProtectedRoute>} />
+          <Route path="/admin/reports" element={<ProtectedRoute><ReportsPage /></ProtectedRoute>} />
+          <Route path="/admin/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
+          <Route path="/admin/seo" element={<ProtectedRoute><SEOManager /></ProtectedRoute>} />
+          <Route path="/admin/google-business" element={<ProtectedRoute><GoogleBusinessManager /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
