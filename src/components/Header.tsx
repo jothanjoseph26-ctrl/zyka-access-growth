@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, TrendingUp } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -21,12 +22,7 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow">
-              <TrendingUp className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-foreground">
-              Zyka<span className="text-gradient-primary">Credit</span>
-            </span>
+            <img src={Logo} alt="Zyka Credit" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
