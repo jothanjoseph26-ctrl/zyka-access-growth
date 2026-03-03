@@ -84,13 +84,13 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <a href="mailto:zykascreditlimited@gmail.com" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group">
+                  <a href="mailto:info@zykacredit.com" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <p className="text-foreground font-medium">zykascreditlimited@gmail.com</p>
+                      <p className="text-foreground font-medium">info@zykacredit.com</p>
                     </div>
                   </a>
 

@@ -41,10 +41,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { supabase } from "@/integrations/supabase/client";
-import type { Pawn, Customer } from "@/integrations/supabase/types";
+import type { Tables } from "@/integrations/supabase/types";
 import AdminLayout from "@/layouts/AdminLayout";
 
-interface PawnWithCustomer extends Pawn {
+type PawnRow = Tables<"pawns">;
+
+interface PawnWithCustomer extends PawnRow {
   customer_name: string;
   customer_phone: string;
 }
@@ -125,8 +127,8 @@ export default function PawnsPage() {
     return matchesSearch && matchesStatus && matchesType;
   });
 
-  const calculateInterest = (pawn: Pawn) => {
-    return Math.round((pawn.loan_amount * pawn.interest_rate * pawn.tenure_days) / 100);
+  const calculateInterest = (pawn: PawnRow) => {
+    return Math.round(((pawn.loan_amount || 0) * (pawn.interest_rate || 3) * (pawn.tenure_days || 30)) / 100);
   };
 
   if (loading) {
@@ -242,8 +244,8 @@ export default function PawnsPage() {
                           </Badge>
                         </TableCell>
                         <TableCell className="max-w-xs truncate">{pawn.item_description}</TableCell>
-                        <TableCell className="text-right font-medium">₹{pawn.loan_amount?.toLocaleString()}</TableCell>
-                        <TableCell className="text-right text-gray-500">₹{calculateInterest(pawn).toLocaleString()}</TableCell>
+                        <TableCell className="text-right font-medium">₦{pawn.loan_amount?.toLocaleString()}</TableCell>
+                        <TableCell className="text-right text-muted-foreground">₦{calculateInterest(pawn).toLocaleString()}</TableCell>
                         <TableCell>
                           <Badge className={statusColors[pawn.status] || "bg-gray-100"}>
                             {pawn.status}
