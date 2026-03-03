@@ -6,7 +6,7 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-const RECIPIENT_EMAIL = "zykascreditlimited@gmail.com";
+const RECIPIENT_EMAIL = "info@zykacredit.com";
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -66,7 +66,7 @@ serve(async (req) => {
             <p>If you have any questions, feel free to reach us at:</p>
             <ul>
               <li>Phone: 0904 937 1418 / 0818 705 2728</li>
-              <li>Email: zykascreditlimited@gmail.com</li>
+              <li>Email: info@zykacredit.com</li>
               <li>Office: Suite 13, Purple Stone Plaza, Apo Resettlement, Abuja, Nigeria</li>
             </ul>
             <p>Best regards,<br /><strong>Zyka Credit Limited</strong></p>

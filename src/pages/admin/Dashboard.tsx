@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { supabase } from "@/integrations/supabase/client";
-import type { Pawn } from "@/integrations/supabase/types";
+import type { Tables } from "@/integrations/supabase/types";
 import AdminLayout from "@/layouts/AdminLayout";
 
 interface DashboardData {
@@ -29,8 +29,8 @@ interface DashboardData {
   totalCustomers: number;
   pendingPawns: number;
   todayRevenue: number;
-  recentPawns: (Pawn & { customer_name: string })[];
-  expiringPawns: (Pawn & { customer_name: string })[];
+  recentPawns: (Tables<"pawns"> & { customer_name: string })[];
+  expiringPawns: (Tables<"pawns"> & { customer_name: string })[];
 }
 
 const statusColors: Record<string, string> = {
