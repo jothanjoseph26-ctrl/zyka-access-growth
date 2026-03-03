@@ -98,7 +98,7 @@ export default function CustomersPage() {
               </div>
               <div>
                 <p className="text-sm text-gray-500">Total Value</p>
-                <p className="text-2xl font-bold">₹{mockCustomers.reduce((sum, c) => sum + c.totalValue, 0).toLocaleString()}</p>
+                <p className="text-2xl font-bold">₦{mockCustomers.reduce((sum, c) => sum + c.totalValue, 0).toLocaleString()}</p>
               </div>
             </CardContent>
           </Card>
@@ -166,7 +166,7 @@ export default function CustomersPage() {
                       <Badge variant="outline">{customer.pawns}</Badge>
                     </TableCell>
                     <TableCell className="text-right font-medium">
-                      ₹{customer.totalValue.toLocaleString()}
+                      ₦{customer.totalValue.toLocaleString()}
                     </TableCell>
                     <TableCell>
                       <Badge className={customer.status === "active" ? "bg-green-100 text-green-700" : "bg-gray-100 text-gray-700"}>
