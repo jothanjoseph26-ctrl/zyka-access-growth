@@ -57,7 +57,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   return (
     <div className="min-h-screen bg-muted/30">
       {/* Top Header */}
-      <header className="fixed top-0 left-0 right-0 h-16 bg-card border-b border-border z-40 flex items-center px-4 justify-between">
+      <header className="fixed top-0 left-0 right-0 h-16 bg-background border-b border-border z-40 flex items-center px-4 justify-between">
         <div className="flex items-center gap-4">
           <Button
             variant="ghost"
@@ -128,7 +128,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed top-16 left-0 bottom-0 bg-card border-r border-border z-50 transition-all duration-300",
+          "fixed top-16 left-0 bottom-0 bg-sidebar border-r border-sidebar-border z-50 transition-all duration-300",
           mobileOpen ? "w-64" : "w-64 -translate-x-full lg:translate-x-0",
           sidebarOpen ? "lg:w-64" : "lg:w-16"
         )}
@@ -146,7 +146,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Button
             variant="ghost"
             size="icon"
-            className="hidden lg:flex absolute -right-3 top-4 h-6 w-6 bg-card border border-border shadow-sm rounded-full"
+            className="hidden lg:flex absolute -right-3 top-4 h-6 w-6 bg-background border border-border shadow-sm rounded-full"
             onClick={() => setSidebarOpen(!sidebarOpen)}
           >
             <Menu className="h-3 w-3" />
@@ -164,8 +164,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   className={cn(
                     "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all",
                     isActive
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                      ? "bg-sidebar-primary text-sidebar-primary-foreground shadow-sm"
+                      : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground",
                     !sidebarOpen && "lg:justify-center lg:px-2"
                   )}
                 >
@@ -177,10 +177,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </nav>
 
           {sidebarOpen && (
-            <div className="p-4 border-t border-border">
-              <div className="bg-primary/10 rounded-lg p-3">
-                <p className="text-xs text-primary font-medium">Today's Revenue</p>
-                <p className="text-lg font-bold text-foreground">₦2,450,000</p>
+            <div className="p-4 border-t border-sidebar-border">
+              <div className="bg-sidebar-primary/10 rounded-lg p-3">
+                <p className="text-xs text-sidebar-primary font-medium">Today's Revenue</p>
+                <p className="text-lg font-bold text-sidebar-foreground">₦2,450,000</p>
               </div>
             </div>
           )}

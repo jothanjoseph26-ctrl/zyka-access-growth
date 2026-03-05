@@ -15,7 +15,7 @@ const HeroSection = () => {
             className="w-full h-full object-cover object-top opacity-90"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/70 to-transparent lg:from-background lg:via-background/90 lg:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/80 to-transparent lg:from-background lg:via-background/95 lg:to-background/30" />
       </div>
 
       {/* Content */}
