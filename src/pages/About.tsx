@@ -26,14 +26,14 @@ const About = () => {
                 </p>
               </div>
               <div className="relative">
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-border/50 shadow-glow max-w-sm mx-auto lg:ml-auto">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden border-2 border-primary/20 shadow-xl max-w-sm mx-auto lg:ml-auto">
                   <img
                     src={ceoImage}
                     alt="ZykaCredit CEO"
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-[center_20%] scale-105"
                   />
                 </div>
-                <div className="absolute -bottom-4 -left-4 w-full h-full rounded-2xl bg-gradient-primary opacity-20 -z-10" />
+                <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-primary/15 -z-10" />
               </div>
             </div>
           </div>
