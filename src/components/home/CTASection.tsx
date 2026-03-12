@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import patternBg from "@/assets/pattern-bg.jpg";
+import brandBanner from "@/assets/brand-banner.jpg";
 
 const CTASection = () => {
   return (
@@ -9,11 +9,11 @@ const CTASection = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src={patternBg}
+          src={brandBanner}
           alt=""
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-15"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background" />
       </div>
 
       <div className="container-tight relative z-10">
