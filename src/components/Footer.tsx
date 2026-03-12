@@ -48,9 +48,9 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact */}
+          {/* Contact — Head Office */}
           <div className="space-y-4">
-            <h4 className="text-[hsl(220,10%,90%)] font-semibold">Contact Us</h4>
+            <h4 className="text-[hsl(220,10%,90%)] font-semibold">Head Office</h4>
             <div className="flex flex-col gap-3">
               <div className="text-[hsl(220,10%,65%)] text-sm flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
@@ -68,6 +68,32 @@ const Footer = () => {
                 <Phone className="w-4 h-4" />
                 0818 705 2728
               </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Branch Office Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 pt-8 border-t border-[hsl(220,15%,20%)]">
+          <div className="space-y-4">
+            <h4 className="text-[hsl(220,10%,90%)] font-semibold">Branch Office — Mararaba</h4>
+            <div className="flex flex-col gap-3">
+              <div className="text-[hsl(220,10%,65%)] text-sm flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>A&B Plaza, Opposite Olex Pharmacy,<br />Beside Midland Plaza, Mararaba,<br />Nasarawa State.</span>
+              </div>
+              <a href="tel:09048185681" className="text-[hsl(220,10%,65%)] text-sm hover:text-primary transition-colors flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                0904 818 5681
+              </a>
+              <a href="tel:09068761207" className="text-[hsl(220,10%,65%)] text-sm hover:text-primary transition-colors flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                0906 876 1207
+              </a>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <h4 className="text-[hsl(220,10%,90%)] font-semibold">Follow Us</h4>
+            <div className="flex flex-col gap-3">
               <a href="https://instagram.com/zykascredit_limited" target="_blank" rel="noopener noreferrer" className="text-[hsl(220,10%,65%)] text-sm hover:text-primary transition-colors flex items-center gap-2">
                 <Instagram className="w-4 h-4" />
                 @zykascredit_limited

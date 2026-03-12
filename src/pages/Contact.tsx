@@ -124,6 +124,45 @@ const Contact = () => {
                     </div>
                   </a>
                 </div>
+
+                {/* Branch Office */}
+                <div className="mt-10">
+                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    Branch Office — Mararaba
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border/50">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Building2 className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground">Branch Address</p>
+                        <p className="text-foreground font-medium">A&B Plaza, Opposite Olex Pharmacy,<br />Beside Midland Plaza, Mararaba,<br />Nasarawa State.</p>
+                      </div>
+                    </div>
+
+                    <a href="tel:09048185681" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <Phone className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground">Phone</p>
+                        <p className="text-foreground font-medium">0904 818 5681</p>
+                      </div>
+                    </a>
+
+                    <a href="tel:09068761207" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 transition-all group">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <Phone className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground">Phone (Alt)</p>
+                        <p className="text-foreground font-medium">0906 876 1207</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Contact Form */}

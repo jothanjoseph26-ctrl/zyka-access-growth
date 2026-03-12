@@ -80,18 +80,18 @@ const About = () => {
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="rounded-2xl overflow-hidden border border-border/50 shadow-glow">
+              <div className="rounded-2xl overflow-hidden border-2 border-primary/15 shadow-lg group">
                 <img
                   src={teamGroup}
                   alt="ZykaCredit Team Group"
-                  className="w-full h-72 md:h-80 object-cover"
+                  className="w-full h-72 md:h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden border border-border/50 shadow-glow">
+              <div className="rounded-2xl overflow-hidden border-2 border-primary/15 shadow-lg group">
                 <img
                   src={teamZyka}
                   alt="ZykaCredit Team Together"
-                  className="w-full h-72 md:h-80 object-cover"
+                  className="w-full h-72 md:h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>
