@@ -1,9 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { TrendingUp, Target, Users, Award } from "lucide-react";
-import ceoImage from "@/assets/ceo.jpg";
-import teamGroup from "@/assets/team-group.jpg";
-import teamZyka from "@/assets/team-zyka.jpg";
+import brandBanner from "@/assets/brand-banner.jpg";
 
 const About = () => {
   return (
@@ -26,11 +24,11 @@ const About = () => {
                 </p>
               </div>
               <div className="relative">
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden border-2 border-primary/20 shadow-xl max-w-sm mx-auto lg:ml-auto">
+                <div className="aspect-video rounded-2xl overflow-hidden border-2 border-primary/20 shadow-xl">
                   <img
-                    src={ceoImage}
-                    alt="ZykaCredit CEO"
-                    className="w-full h-full object-cover object-[center_20%] scale-105"
+                    src={brandBanner}
+                    alt="ZykaCredit"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-primary/15 -z-10" />
@@ -65,35 +63,26 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Section */}
+        {/* Our Strength */}
         <section className="section-padding">
           <div className="container-tight">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-                Our Team
+                Our Strength
               </span>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Meet the <span className="text-gradient-primary">ZykaCredit Family</span>
+                The <span className="text-gradient-primary">ZykaCredit</span> Advantage
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 A dedicated team of professionals committed to helping you achieve your financial goals.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="rounded-2xl overflow-hidden border-2 border-primary/15 shadow-lg group">
-                <img
-                  src={teamGroup}
-                  alt="ZykaCredit Team Group"
-                  className="w-full h-72 md:h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden border-2 border-primary/15 shadow-lg group">
-                <img
-                  src={teamZyka}
-                  alt="ZykaCredit Team Together"
-                  className="w-full h-72 md:h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+            <div className="rounded-2xl overflow-hidden border-2 border-primary/15 shadow-lg">
+              <img
+                src={brandBanner}
+                alt="ZykaCredit Financial Services"
+                className="w-full h-72 md:h-80 object-cover"
+              />
             </div>
           </div>
         </section>

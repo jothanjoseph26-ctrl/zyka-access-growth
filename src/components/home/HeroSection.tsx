@@ -1,22 +1,21 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import ceoImage from "@/assets/ceo.jpg";
+import brandBanner from "@/assets/brand-banner.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-20">
-      {/* Background with CEO Portrait */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[45%] overflow-hidden">
+        <div className="absolute right-0 top-0 bottom-0 w-full overflow-hidden">
           <img
-            src={ceoImage}
-            alt="ZykaCredit CEO"
-            className="w-full h-full object-cover object-[center_15%] opacity-85"
+            src={brandBanner}
+            alt="ZykaCredit"
+            className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/98 to-background/20 lg:from-background lg:via-background/95 lg:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
       </div>
 
       {/* Content */}
