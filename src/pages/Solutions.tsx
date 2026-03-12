@@ -3,8 +3,7 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { User, Building2, TrendingUp, Briefcase, GraduationCap, Users, ArrowRight, CheckCircle, Wheat } from "lucide-react";
-import teamGroup from "@/assets/team-group.jpg";
-import teamZyka from "@/assets/team-zyka.jpg";
+import brandBanner from "@/assets/brand-banner.jpg";
 
 const solutions = [
   {
@@ -103,13 +102,13 @@ const Solutions = () => {
           </div>
         </section>
 
-        {/* Team Image Banner */}
+        {/* Banner */}
         <section className="section-padding !py-8">
           <div className="container-tight">
             <div className="relative rounded-2xl overflow-hidden h-64 md:h-80">
               <img
-                src={teamGroup}
-                alt="ZykaCredit Team"
+                src={brandBanner}
+                alt="ZykaCredit"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent flex items-center">
@@ -166,13 +165,13 @@ const Solutions = () => {
           </div>
         </section>
 
-        {/* Bottom Team Image */}
+        {/* Bottom CTA */}
         <section className="section-padding">
           <div className="container-tight">
             <div className="relative rounded-2xl overflow-hidden">
               <img
-                src={teamZyka}
-                alt="ZykaCredit Team Together"
+                src={brandBanner}
+                alt="ZykaCredit Financial Services"
                 className="w-full h-64 md:h-96 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent flex items-end">
